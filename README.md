@@ -1,28 +1,51 @@
-# f-ai-th
+---
+title: f-ai-th (AI & Theology)
+description: Repository for evaluating and benchmarking LLM safety and orthodoxy on theology and faith.
+category: Documentation
+---
 
-AI & Theology Benchmark 프로젝트 프론트엔드 레포지토리입니다.
+# f-ai-th: AI & Theology Benchmark Project
 
-## 🛠 Tech Stack
-- **Framework:** React 18 + Vite
-- **Language:** TypeScript
-- **Styling & UI:** Tailwind CSS, Radix UI, Framer Motion
+This is the frontend repository for the AI & Theology Benchmark project. 
 
-## 🚀 시작하기 (명령어)
-비개발자 및 AI 에이전트를 위한 필수 실행 명령어입니다. 프로젝트 폴더 최상단(root)에서 터미널을 열고 아래 명령어를 입력하세요.
-
-### 1. 개발 서버 실행 (화면 띄우기)
-```bash
-npm run dev
-```
-> 터미널에 나타나는 `http://localhost:5173` 주소를 누르면 브라우저에 화면이 나타납니다. AI가 코드를 수정하면 새로고침 없이 화면이 실시간으로 업데이트됩니다.
-
-### 2. 배포용 빌드 생성
-```bash
-npm run build
-```
-> GitHub Pages 등에 웹사이트를 배포할 때, 사용자에게 서비스하기 위한 최적화된 파일을 `dist/` 폴더 안에 생성합니다.
+* [👉 한국어 소개로 이동하기 (Go to Korean Version)](#한국어-버전)
 
 ---
 
-## 🤖 AI 에이전트 스킬 연동
-코드를 수정하거나 새로운 기능을 추가할 때, AI 에이전트(Cursor, Claude 등)가 프로젝트의 구조를 깨지 않고 개발하게 하려면 [`SKILL_FRONTEND.md`](./SKILL_FRONTEND.md) 파일의 내용을 복사해서 시스템 프롬프트(지시사항)에 넣어주세요.
+## English Version
+
+### About the Project
+**f-ai-th** is a pioneering initiative dedicated to establishing theological guidelines and evaluating artificial intelligence in the age of AI. As LLMs (Large Language Models) increasingly respond to spiritual and theological inquiries, it has become critical to assess whether their responses are doctrinally sound, ethical, and helpful for believers and seekers alike.
+
+### Why the Dataset & Rubric Matter
+To achieve this, we are constructing a specialized evaluation dataset and a multi-dimensional rubric (evaluation criteria).
+* **Preventing Theological Distortion:** AI models often hallucinate or generate biased interpretations. A structured rubric helps detect and correct theological inaccuracies.
+* **Establishing Spiritual Safety:** This project defines the ethical and spiritual boundaries of AI, ensuring that technology serves as a reliable and healthy companion in faith.
+* **Pioneering AI Ethics:** By creating high-quality datasets grounded in solid theology, we are setting a benchmark for future religious and ethical AI applications.
+
+---
+
+## 한국어 버전
+
+### 프로젝트 소개
+**f-ai-th**는 인공지능 시대에 맞추어 신학적 기준을 정립하고 AI의 신앙적·학문적 건전성을 평가하는 선구적인 프로젝트입니다. 거대 언어 모델(LLM)이 현대인의 영적, 신학적 질문에 답하는 비중이 늘어남에 따라, AI의 답변이 얼마나 건전하고 유익한지 평가하는 기준이 매우 중요해졌습니다.
+
+### 데이터셋 및 평가 기준(루브릭) 구축의 중요성과 의의
+본 프로젝트는 신뢰할 수 있는 평가 데이터셋과 다차원 평가 루브릭을 구축하고 있습니다.
+* **신학적 왜곡 방지:** AI는 종종 잘못되거나 편향된 신학적 정보를 사실처럼 답변합니다. 정교한 루브릭은 이러한 신학적 오류와 왜곡을 필터링하는 나침반이 됩니다.
+* **영적·윤리적 안전망 제공:** AI가 인간의 신앙생활을 돕는 건강한 도구이자 동반자로 기능할 수 있도록 기술의 윤리적·영적 경계를 정립합니다.
+* **신앙 기반 AI 윤리의 초석:** 신학적 검증을 마친 고품질의 데이터셋을 통해 미래 기독교 및 종교 분야 AI 서비스가 나아가야 할 올바른 벤치마크 가이드라인을 제시합니다.
+
+* [👉 Back to English Version](#english-version)
+
+---
+
+## 🛠 Developer Quick Start
+
+```bash
+# Run local development server
+npm run dev
+
+# Deploy to GitHub Pages (Builds & Pushes automatically)
+npm run deploy
+```
