@@ -36,6 +36,16 @@ const benchmarkProviders = [
     ]
   },
   {
+    id: 'xai',
+    name: 'xAI',
+    score: 83.69,
+    color: '#FFFFFF',
+    models: [
+      { name: 'Grok 4.2 Fast', score: 85.45 },
+      { name: 'Grok 4.2 Expert', score: 79.67 },
+    ]
+  },
+  {
     id: 'upstage',
     name: 'Upstage',
     score: 82.67,
@@ -44,28 +54,23 @@ const benchmarkProviders = [
       { name: 'Solar Pro 3 Reasoning', score: 86.45 },
       { name: 'Solar Pro 3', score: 78.90 },
     ]
-  },
-  {
-    id: 'xai',
-    name: 'xAI',
-    score: 82.56,
-    color: '#FFFFFF',
-    models: [
-      { name: 'Grok 4.2 Fast', score: 85.45 },
-      { name: 'Grok 4.2 Expert', score: 79.67 },
-    ]
   }
 ];
 
 const timelineEvents = [
-  { year: '2023. 11', event: '첫 모임', description: '창립 멤버 대화모임 개최' },
-  { year: '2024. 2', event: '연구팀 구성', description: '연구책임자로 임성빈 교수 선출, 실무팀 구성 및 미션 설정' },
-  { year: '2024. 3~6', event: '프로젝트 기획', description: '정기 모임 확대, 교육·설교·묵상 앱 등 프로젝트 논의' },
-  { year: '2025. 6', event: '버전 1.2 발표', description: '「신앙과 AI의 미래 v1.2」 발표, 한국교회 데이터 센터 구상' },
+  { year: '2023. 여름', event: '비전 공유', description: '우창록 대표·임성빈 교수·김경진 목사, AI 시대에 교회의 신학적 응답을 준비하는 연구 공동체의 필요성을 공감하다' },
+  { year: '2023. 11', event: '첫 모임', description: '소망교회의 후원으로 첫 모임 개최 — 창립 멤버 대화모임' },
+  { year: '2024. 2', event: '연구팀 구성', description: '연구책임자로 임성빈 교수(장신대 전 총장, 명예교수) 선출, 실무팀 구성, 미션·목표·프로젝트 설정' },
+  { year: '2024. 3~6', event: '정기 모임', description: '정기 모임 확대 (3차~5차), 교육·설교·묵상 앱 등 프로젝트 논의' },
+  { year: '2025. 6', event: '모임 재개', description: '모임 재개, 「신앙과 AI의 미래 v1.2」 발표, 한국교회 데이터 센터 구상' },
+  { year: '2025. 8', event: '워크숍 확정', description: 'AI 워크숍 최종안 확정' },
+  { year: '2025. 9', event: '벤치마크 설계', description: 'LLM 벤치마크 설계(안) 공유' },
   { year: '2025. 10~11', event: 'AI 워크숍', description: '「교회를 위한 AI 워크숍 2025」 개최 (4주, 장신대)' },
   { year: '2025. 11', event: '벤치마크 기획', description: 'LLM 벤치마크 실무회의, 파일럿 설계 확정' },
+  { year: '2026. 2', event: '세부기획 공유', description: '2026년 2월에 세부 기획안 발표 후 프로젝트 착수' },
   { year: '2026. 4', event: '데이터 수집 완료', description: '벤치마크 수집·채점 완료 (10개 모델 × 20문항 × 400개 응답)' },
-  { year: '2026. 5', event: '결과 공개', description: '벤치마크 결과 분석 보고서 발표 및 기자간담회' },
+  { year: '2026. 5. 8', event: '보고서 발표', description: '벤치마크 결과 분석 보고서 발표 (HDI 전체 평균 88.53점)' },
+  { year: '2026. 5. 28', event: '기자간담회', description: '기자간담회 — 벤치마크 결과 공개 발표 (예정)' },
 ];
 
 const rubricData = [
@@ -117,7 +122,7 @@ const teamMembers = [
   { name: '이재열', role: '서울대학교 사회학과 교수' },
   { name: '임성빈', role: '장로회신학대학교 전 총장 / 현 명예교수' },
   { name: '정대경', role: '연세대학교 연합신학대학원 교수' },
-  { name: '조성실', role: '장로회신학대학교 교수' },
+  { name: '조성실', role: '장로회신학대학교 교육혁신처 교수' },
   { name: '최융지', role: '화이트크로우 대표' },
   { name: '최인설', role: '(주)퐁 CTO' },
   { name: '최진호', role: '에모리대학교 컴퓨터과학과 교수 / Emory NLP Research Lab' },
@@ -392,20 +397,28 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="space-y-8 text-xl md:text-2xl text-white/80 leading-relaxed font-light text-center"
+            className="space-y-6 text-lg md:text-xl text-white/80 leading-relaxed font-light text-center"
           >
             <p>
-              인공지능은 더 이상 먼 미래의 이야기가 아닙니다.<br />이미 오늘 우리의 삶과 사역의 현장을 깊이 바꾸어 가고 있습니다.
-            </p>
-            <p className="text-white font-medium">
-              교회는 두 가지 유혹 앞에 서 있습니다. 하나는 변화를 두려워하여 외면하는 것이며, 다른 하나는 비판 없이 기술을 받아들이는 것입니다. 우리는 제3의 길을 가고자 합니다.
+              인공지능은 더 이상 먼 미래의 이야기가 아닙니다. 이미 오늘 우리의 삶과 사역의 현장을 깊이 바꾸어 가고 있습니다.
+              이러한 시대에 교회는 두 가지 유혹 앞에 서 있습니다. 하나는 변화를 두려워하여 외면하는 것이며, 다른 하나는 비판 없이 기술을 받아들이는 것입니다. 우리는 제3의 길을 가고자 합니다. 성경과 신학의 기반 위에 서서, 시대의 징조를 분별하며, AI 기술을 바르게 이해하고 책임감 있게 활용하는 길입니다.
             </p>
             <p>
-              이 작업은 단순한 기술 평가가 아닙니다. 인공지능이 신앙과 신학의 언어를 어떻게 다루고 있는지, 목회 현장에서 어떤 위험과 가능성을 지니는지를 신학적으로 검증하는 일입니다.
+              「신앙과 AI의 미래」는 과학자, 기업인, 법률인, 신학자, 연구자들이 한자리에 모여 대화하고 연구하며 실천하는 공동체입니다. 지난 3년에 걸쳐 저희는 인공지능 시대의 건강한 신앙인과 교회, 그리고 사회를 위한 연구와 협의를 지속해 왔습니다. 오늘은 우리의 연구 기획들 중 하나인 한국어 신학·윤리 기반 LLM 벤치마크 설계와 그 설계에 기초한 평가의 일부를 한국교회와 사회와 처음으로 공유하는 자리와 시간을 갖게 되었습니다.
             </p>
-            <div className="pt-12">
-              <p className="text-lg text-white/50">장로회신학대학교 전 총장·명예교수</p>
-              <p className="text-3xl font-bold mt-2 tracking-widest">임 성 빈</p>
+            <p>
+              이 작업은 단순한 기술 평가가 아닙니다. 인공지능이 신앙과 신학의 언어를 어떻게 다루고 있는지, 목회 현장에서 어떤 위험과 가능성을 동시에 지니는지를 신학적으로 검증하는 일입니다. 우리는 한국교회가 AI 시대에 단지 기술의 수용자가 아니라, 신학적 분별과 윤리적 기준을 제시하는 공적 책임의 주체가 되어야 한다고 믿습니다.
+            </p>
+            <p>
+              이 모든 여정이 가능했던 것은 처음부터 비전에 공감하고 물심양면으로 후원해 주신 소망교회 덕분입니다. 교회의 지원이 있었기에 연구와 실천이 여기까지 올 수 있었습니다.
+            </p>
+            <p>
+              오늘 발표되는 결과가 한국교회와 다음 세대, 그리고 우리 사회와 교계와 신학계에 의미 있는 대화의 출발점이 되기를 바랍니다. 기자 여러분의 깊은 관심과 영향력있는 보도를 통해, 이 작은 결실이 더 넓은 공론의 장으로 이어지기를 소망합니다.
+            </p>
+            <div className="pt-12 text-center">
+              <p className="text-lg text-white/80 mb-2">「신앙과 AI의 미래」 연구자들과 함께</p>
+              <p className="text-base text-white/50">장로회신학대학교 전 총장·명예교수</p>
+              <p className="text-2xl font-bold mt-2 tracking-widest">임 성 빈</p>
             </div>
           </motion.div>
         </div>
@@ -447,7 +460,7 @@ export default function App() {
             <div className="flex items-center gap-4 mb-12">
               <div className="w-24 text-white text-right font-medium shrink-0">전체 평균</div>
               <div className="flex-1 relative h-14 bg-white/5 flex items-center justify-end px-6 border border-white/20">
-                <span className="font-bold text-white text-2xl tracking-widest">HDI 88.30</span>
+                <span className="font-bold text-white text-2xl tracking-widest">HDI 88.53</span>
               </div>
             </div>
 
