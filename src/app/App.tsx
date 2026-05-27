@@ -323,7 +323,7 @@ export default function App() {
             신앙과 AI의 미래
           </h1>
           <p className="text-xl md:text-2xl text-white/50 font-light mb-12 tracking-widest uppercase">
-            Foundation of AI with Theology and Humanity
+            Future of Artificial Intelligence with Theology and Humanity
           </p>
         </motion.div>
 
@@ -673,7 +673,7 @@ export default function App() {
           </div>
           <div className="flex flex-col items-center md:items-end gap-2">
             <div className="text-sm text-white/50">
-              © 2026 Foundation of AI with Theology and Humanity. All rights reserved.
+              © 2026 Future of AI with Theology and Humanity. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center md:justify-end gap-4 text-white/30 text-xs">
               <a href="https://thewhitecrow.co" rel="dofollow" className="cursor-text">AI 전문가</a>
