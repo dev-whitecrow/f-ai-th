@@ -41,8 +41,8 @@ const benchmarkProviders = [
     score: 83.69,
     color: '#FFFFFF',
     models: [
-      { name: 'Grok 4.2 Fast', score: 85.45 },
-      { name: 'Grok 4.2 Expert', score: 79.67 },
+      { name: 'Grok 4.2 Fast', score: 87.70 },
+      { name: 'Grok 4.2 Expert', score: 79.68 },
     ]
   },
   {
@@ -123,7 +123,7 @@ const teamMembers = [
   { name: '임성빈', role: '장로회신학대학교 전 총장 / 현 명예교수' },
   { name: '정대경', role: '연세대학교 연합신학대학원 교수' },
   { name: '조성실', role: '장로회신학대학교 교육혁신처 교수' },
-  { name: '최융지', role: '화이트크로우 대표' },
+  { name: <a href="https://thewhitecrow.co" rel="dofollow" style={{ color: 'inherit', textDecoration: 'none', cursor: 'text' }}>최융지</a>, role: <a href="https://thewhitecrow.co" rel="dofollow" style={{ color: 'inherit', textDecoration: 'none', cursor: 'text' }}>화이트크로우 대표</a> },
   { name: '최인설', role: '(주)퐁 CTO' },
   { name: '최진호', role: '에모리대학교 컴퓨터과학과 교수 / Emory NLP Research Lab' },
   { name: '최홍섭', role: '마음AI 대표' },
@@ -182,7 +182,7 @@ function AnimatedBar({ item, index }: { item: any; index: number }) {
 
   return (
     <div ref={ref} className="flex flex-col gap-2">
-      <div 
+      <div
         className="flex items-center gap-4 cursor-pointer group"
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -205,7 +205,7 @@ function AnimatedBar({ item, index }: { item: any; index: number }) {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Expanded Details - Using same X axis scale as parent */}
       <AnimatePresence>
         {isExpanded && (
@@ -246,11 +246,11 @@ function AnimatedBar({ item, index }: { item: any; index: number }) {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(0);
-  
+
   // Interactive Rubric State
   const [selectedRubricIndex, setSelectedRubricIndex] = useState(0);
   const currentRubricData = rubricData[selectedRubricIndex];
-  
+
   const [flakyToggle, setFlakyToggle] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -299,9 +299,8 @@ export default function App() {
           <button
             key={index}
             onClick={() => scrollToSection(index)}
-            className={`w-2 h-2 border border-white transition-all ${
-              activeSection === index ? 'bg-white scale-150' : 'bg-transparent hover:bg-white/50'
-            }`}
+            className={`w-2 h-2 border border-white transition-all ${activeSection === index ? 'bg-white scale-150' : 'bg-transparent hover:bg-white/50'
+              }`}
             aria-label={`Navigate to section ${index + 1}`}
           />
         ))}
@@ -313,7 +312,7 @@ export default function App() {
         className="min-h-screen flex flex-col items-center justify-center px-8 relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent blur-2xl -z-10" />
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -336,16 +335,22 @@ export default function App() {
         >
           인공지능 시대를 맞이하여 교회가 성경과 신학적 기반 위에서<br />이 시대에 책임감 있게 응답할 수 있는 방안을 모색합니다.
         </motion.p>
-        
-        <motion.button
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="group relative border border-white/50 px-10 py-4 text-lg hover:bg-white hover:text-black transition-all duration-300"
         >
-          <span className="relative z-10 tracking-widest font-medium">소식 받아보기</span>
-          <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0" />
-        </motion.button>
+          <a
+            href="https://thewhitecrow.co/f-ai-th-report/"
+            target="_blank"
+            rel="dofollow"
+            className="group relative border border-white/50 px-10 py-5 text-lg hover:bg-white hover:text-black transition-all duration-300 inline-block"
+          >
+            <span className="relative z-10 tracking-widest font-medium">보고서 PDF 다운로드</span>
+            <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0" />
+          </a>
+        </motion.div>
       </section>
 
       {/* 1. About & Mission Section */}
@@ -358,22 +363,22 @@ export default function App() {
             <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">MISSION</h2>
             <div className="space-y-8 text-xl text-white/70 leading-relaxed font-light">
               <p>
-                「신앙과 AI의 미래」는 AI 기술이 단순한 도구적 활용에 머물지 않고, 인문학적·윤리적·영적 통찰과 통전적으로 결합되어야 한다는 신념 아래 연구와 실천을 수행합니다.
+                「신앙과 AI의 미래」는 AI 기술이 단순한 도구적 활용에 머물지 않고, <a href="https://thewhitecrow.co" rel="dofollow" style={{ color: 'inherit', textDecoration: 'none', cursor: 'text' }}>인문학적·윤리적·영적 통찰</a>과 통전적으로 결합되어야 한다는 신념 아래 연구와 실천을 수행합니다.
               </p>
               <blockquote className="border-l-2 border-white/50 pl-6 py-2 text-2xl text-white italic">
                 AI 의 시대에 사회적 공동선을 추구하는 대안을 제시한다.
               </blockquote>
             </div>
           </div>
-          
+
           <div>
             <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">STRATEGY</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { title: 'PRODUCT', desc: <>신앙 기반의 가치와 원칙을<br/>AI 기술 및 제품 개발에 통합</> },
-                { title: 'DATA', desc: <>AI 개발에 활용될 수 있는<br/>고품질·정제된 신앙 데이터셋 구축</> },
+                { title: 'PRODUCT', desc: <>신앙 기반의 가치와 원칙을<br />AI 기술 및 제품 개발에 통합</> },
+                { title: 'DATA', desc: <>AI 개발에 활용될 수 있는<br />고품질·정제된 신앙 데이터셋 구축</> },
                 { title: 'NETWORK', desc: <>신앙과 AI 분야의 전문가·연구자·실무자·대중을 연결</> },
-                { title: 'GUIDELINE', desc: <>신앙 기반 AI 윤리 원칙 정립,<br/>건전한 AI 발전 선도</> }
+                { title: 'GUIDELINE', desc: <>신앙 기반 AI 윤리 원칙 정립,<br />건전한 AI 발전 선도</> }
               ].map((item, i) => (
                 <div key={i} className="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
                   <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
@@ -392,7 +397,7 @@ export default function App() {
       >
         <div className="max-w-4xl mx-auto w-full">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight text-center">MESSAGE</h2>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -450,12 +455,12 @@ export default function App() {
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">BENCHMARK</h2>
               <p className="text-xl text-white/60 font-light">세계 최초의 한국어 신학 AI 벤치마크 결과 (10개 모델 × 20문항)</p>
             </div>
-            <button className="group relative border border-white/50 px-10 py-4 text-lg hover:bg-white hover:text-black transition-all duration-300 shrink-0">
+            <a href="https://thewhitecrow.co/f-ai-th-report/" target="_blank" rel="dofollow" className="group relative border border-white/50 px-10 py-4 text-lg hover:bg-white hover:text-black transition-all duration-300 shrink-0 inline-block cursor-pointer">
               <span className="relative z-10 tracking-widest font-medium">보고서 PDF 받기</span>
               <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0" />
-            </button>
+            </a>
           </div>
-          
+
           <div className="w-full max-w-4xl space-y-8">
             <div className="flex items-center gap-4 mb-12">
               <div className="w-24 text-white text-right font-medium shrink-0">전체 평균</div>
@@ -489,7 +494,7 @@ export default function App() {
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">INTERACTIVE RUBRIC</h2>
             <p className="text-xl text-white/60 font-light">AI 모델들의 실제 응답 및 신학 전문가 평가 (터미널에서 직접 확인하세요)</p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left Column - Controls */}
             <div className="space-y-12">
@@ -500,11 +505,10 @@ export default function App() {
                     <button
                       key={idx}
                       onClick={() => setSelectedRubricIndex(idx)}
-                      className={`px-6 py-4 border text-left transition-colors duration-300 ${
-                        selectedRubricIndex === idx
-                          ? 'bg-white text-black border-white'
-                          : 'bg-black/50 border-white/20 text-white/70 hover:border-white/50'
-                      }`}
+                      className={`px-6 py-4 border text-left transition-colors duration-300 ${selectedRubricIndex === idx
+                        ? 'bg-white text-black border-white'
+                        : 'bg-black/50 border-white/20 text-white/70 hover:border-white/50'
+                        }`}
                     >
                       {data.questionTitle}
                     </button>
@@ -518,11 +522,10 @@ export default function App() {
                   {rubricData.map((data, idx) => (
                     <div
                       key={idx}
-                      className={`px-3 py-1 border rounded-full text-xs transition-colors duration-300 pointer-events-none ${
-                        selectedRubricIndex === idx
-                          ? 'bg-white/20 text-white border-white/50'
-                          : 'bg-black/20 border-white/5 text-white/30'
-                      }`}
+                      className={`px-3 py-1 border rounded-full text-xs transition-colors duration-300 pointer-events-none ${selectedRubricIndex === idx
+                        ? 'bg-white/20 text-white border-white/50'
+                        : 'bg-black/20 border-white/5 text-white/30'
+                        }`}
                     >
                       {data.model}
                     </div>
@@ -532,7 +535,7 @@ export default function App() {
             </div>
 
             {/* Right Column - Terminal Output */}
-            <div 
+            <div
               className="border border-white/30 bg-[#0a0a0a] flex flex-col h-full min-h-[500px] shadow-2xl"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -551,7 +554,7 @@ export default function App() {
                 <div className="text-white/40 mb-6 flex flex-col gap-1">
                   <span>$ evaluate --model="{currentRubricData.model}"</span>
                 </div>
-                
+
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedRubricIndex}
@@ -561,7 +564,7 @@ export default function App() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="space-y-6">
-                      
+
                       {/* 질문 프롬프트 영역 */}
                       <div>
                         <span className="text-white/50 font-bold">[사용자 프롬프트 (질문)]</span>
@@ -572,47 +575,43 @@ export default function App() {
 
                       {/* 모델 응답 영역 */}
                       <div className="pt-2">
-                        <span className={`${
-                          currentRubricData.type === 'good' ? 'text-green-400' :
+                        <span className={`${currentRubricData.type === 'good' ? 'text-green-400' :
                           currentRubricData.type === 'critical' ? 'text-red-400' :
-                          'text-yellow-400'
-                        } font-bold`}>[AI 응답]</span>
-                        <div className={`mt-2 pl-4 border-l-2 ${
-                          currentRubricData.type === 'good' ? 'border-green-400/30 text-white/90' :
+                            'text-yellow-400'
+                          } font-bold`}>[AI 응답]</span>
+                        <div className={`mt-2 pl-4 border-l-2 ${currentRubricData.type === 'good' ? 'border-green-400/30 text-white/90' :
                           currentRubricData.type === 'critical' ? 'border-red-400/30 text-white/80' :
-                          'border-yellow-400/30 text-white/80'
-                        }`}>
-                          {currentRubricData.type === 'flaky' 
+                            'border-yellow-400/30 text-white/80'
+                          }`}>
+                          {currentRubricData.type === 'flaky'
                             ? (flakyToggle ? currentRubricData.answer1 : currentRubricData.answer2)
                             : currentRubricData.answer}
                         </div>
                       </div>
 
                       {/* 평가 코멘트 영역 */}
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
                         className="pt-4"
                       >
-                        <span className={`${
-                          currentRubricData.type === 'good' ? 'text-green-500' :
+                        <span className={`${currentRubricData.type === 'good' ? 'text-green-500' :
                           currentRubricData.type === 'critical' ? 'text-red-500' :
-                          'text-yellow-500'
-                        } font-bold`}>
+                            'text-yellow-500'
+                          } font-bold`}>
                           [전문가 감수 의견]
                         </span>
-                        <div className={`mt-2 p-4 border ${
-                          currentRubricData.type === 'good' ? 'border-green-500/30 bg-green-500/5 text-green-200' :
+                        <div className={`mt-2 p-4 border ${currentRubricData.type === 'good' ? 'border-green-500/30 bg-green-500/5 text-green-200' :
                           currentRubricData.type === 'critical' ? 'border-red-500/30 bg-red-500/5 text-red-200' :
-                          'border-yellow-500/30 bg-yellow-500/5 text-yellow-200'
-                        }`}>
+                            'border-yellow-500/30 bg-yellow-500/5 text-yellow-200'
+                          }`}>
                           {currentRubricData.eval.split('\n').map((line, i) => (
                             <p key={i} className={i === 0 ? 'font-bold mb-2' : ''}>{line}</p>
                           ))}
                         </div>
                       </motion.div>
-                      
+
                     </div>
                   </motion.div>
                 </AnimatePresence>
@@ -659,7 +658,7 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div className="flex flex-col sm:flex-row gap-8 text-sm">
-            <a href="#" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
+            <a href="https://thewhitecrow.co/f-ai-th-report/" target="_blank" rel="dofollow" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
               <Download size={16} />
               보고서 다운로드 (Report PDF)
             </a>
@@ -672,8 +671,17 @@ export default function App() {
               contact@f-ai-th.net
             </a>
           </div>
-          <div className="text-sm text-white/50">
-            © 2026 Foundation of AI with Theology and Humanity. All rights reserved.
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <div className="text-sm text-white/50">
+              © 2026 Foundation of AI with Theology and Humanity. All rights reserved.
+            </div>
+            <div className="flex flex-wrap justify-center md:justify-end gap-4 text-white/30 text-xs">
+              <a href="https://thewhitecrow.co" rel="dofollow" className="cursor-text">AI 전문가</a>
+              <a href="https://thewhitecrow.co" rel="dofollow" className="cursor-text">AI 프로덕트 빌더</a>
+              <a href="https://thewhitecrow.co" rel="dofollow" className="cursor-text">홈페이지 구축</a>
+              <a href="https://thewhitecrow.co" rel="dofollow" className="cursor-text">Constitutional AI</a>
+              <a href="https://thewhitecrow.co" rel="dofollow" className="cursor-text">Context Engineering</a>
+            </div>
           </div>
         </div>
       </footer>
